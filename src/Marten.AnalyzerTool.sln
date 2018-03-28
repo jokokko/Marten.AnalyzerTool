@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marten.AnalyzerTool", "Marten.AnalyzerTool\Marten.AnalyzerTool.csproj", "{31F277A6-5FB2-4651-90DF-C8D4EE33D662}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marten.AnalyzerTool.Tests", "Marten.AnalyzerTool.Tests\Marten.AnalyzerTool.Tests.csproj", "{79CBC168-5E9E-442D-B8EB-25A44E6983FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31F277A6-5FB2-4651-90DF-C8D4EE33D662}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31F277A6-5FB2-4651-90DF-C8D4EE33D662}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31F277A6-5FB2-4651-90DF-C8D4EE33D662}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31F277A6-5FB2-4651-90DF-C8D4EE33D662}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79CBC168-5E9E-442D-B8EB-25A44E6983FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79CBC168-5E9E-442D-B8EB-25A44E6983FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79CBC168-5E9E-442D-B8EB-25A44E6983FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79CBC168-5E9E-442D-B8EB-25A44E6983FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E549CCAA-00B9-4542-A599-19D2383E4E3C}
+	EndGlobalSection
+EndGlobal
