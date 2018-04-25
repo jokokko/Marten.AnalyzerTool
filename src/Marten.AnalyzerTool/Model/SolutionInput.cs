@@ -8,5 +8,8 @@ namespace Marten.AnalyzerTool.Model
 	    public IEnumerable<string> Solutions;
 	    [Oakton.Description("Target framework")]
 		public string TargetFrameworkFlag;
-    }
+	    [Oakton.Description("Generate HTML output")]
+	    [Oakton.FlagAlias("html", true)]
+	    public bool HtmlFlag;
+	}
 }

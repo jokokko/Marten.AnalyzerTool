@@ -101,7 +101,7 @@ namespace Marten.AnalyzerTool.Analyzers
 				// ReSharper disable once InvertIf
 				if (t != null)
 				{
-				    var ctx = new ProjectionCtx(node, t.ContainingAssembly.Name);
+				    var ctx = new ProjectionCtx(node, t.ContainingAssembly, context.Compilation.Assembly);
 				    collection.GetOrAdd(t.ToDisplayString(Formats.Fqf), s => new ConcurrentBag<ProjectionCtx>()).Add(ctx);
 				}
 			}

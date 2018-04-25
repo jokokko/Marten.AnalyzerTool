@@ -22,7 +22,13 @@ namespace Marten.AnalyzerTool.Commands
 		        solutionProperties["TargetFramework"] = input.TargetFrameworkFlag;
 	        }
 
-            await service.BuildCatalog(input.Solutions.Where(File.Exists), solutionProperties);
+	        var theme = Theme.Default;
+
+	        var reporter = input.HtmlFlag
+		        ? (IProjectionReporter)new ProjectionHtmlReporter()
+		        : new ProjectionConsoleReporter(theme);
+
+			await service.BuildCatalog(input.Solutions.Where(File.Exists), reporter, solutionProperties);
 
             return true;
         }

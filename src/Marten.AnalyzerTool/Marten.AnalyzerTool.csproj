@@ -44,6 +44,9 @@
     <Reference Include="Colorful.Console, Version=1.2.6.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Colorful.Console.1.2.6\lib\net461\Colorful.Console.dll</HintPath>
     </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.8.1.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.8.1\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Build.Framework, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Build.Framework.15.6.82\lib\net46\Microsoft.Build.Framework.dll</HintPath>
       <Private>True</Private>
@@ -67,8 +70,8 @@
     <Reference Include="Microsoft.CodeAnalysis.Workspaces.Desktop, Version=2.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeAnalysis.Workspaces.Common.2.7.0\lib\net46\Microsoft.CodeAnalysis.Workspaces.Desktop.dll</HintPath>
     </Reference>
-    <Reference Include="Oakton, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Oakton.1.4.0\lib\net46\Oakton.dll</HintPath>
+    <Reference Include="Oakton, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oakton.1.5.0\lib\net46\Oakton.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -195,8 +198,13 @@
     <Compile Include="Infrastructure\RuleCategory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Analyzers\ProjectionWiringAnalyser.cs" />
-    <Compile Include="Services\ProjectionCataloguer.cs" />
+    <Compile Include="Services\HtmlFormattingExtensions.cs" />
+    <Compile Include="Services\IProjectionReporter.cs" />
+    <Compile Include="Services\ProjectionCataloger.cs" />
+    <Compile Include="Model\Theme.cs" />
     <Compile Include="Model\SolutionInput.cs" />
+    <Compile Include="Services\ProjectionConsoleReporter.cs" />
+    <Compile Include="Services\ProjectionHtmlReporter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

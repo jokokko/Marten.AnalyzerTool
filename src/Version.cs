@@ -5,17 +5,17 @@ using System.Reflection;
 [assembly: AssemblyDescriptionAttribute("Catalog projections & projection wiring in codebases using Marten")]
 [assembly: AssemblyProductAttribute("Marten.AnalyzerTool")]
 [assembly: AssemblyCopyrightAttribute("Joona-Pekka Kokko")]
-[assembly: AssemblyVersionAttribute("1.0.0.0")]
-[assembly: AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: AssemblyInformationalVersionAttribute("1.0.0.0")]
+[assembly: AssemblyVersionAttribute("1.1.0.0")]
+[assembly: AssemblyFileVersionAttribute("1.1.0.0")]
+[assembly: AssemblyInformationalVersionAttribute("1.1.0.0")]
 namespace System {
     internal static class AssemblyVersionInformation {
         internal const System.String AssemblyTitle = "Marten.AnalyzerTool";
         internal const System.String AssemblyDescription = "Catalog projections & projection wiring in codebases using Marten";
         internal const System.String AssemblyProduct = "Marten.AnalyzerTool";
         internal const System.String AssemblyCopyright = "Joona-Pekka Kokko";
-        internal const System.String AssemblyVersion = "1.0.0.0";
-        internal const System.String AssemblyFileVersion = "1.0.0.0";
-        internal const System.String AssemblyInformationalVersion = "1.0.0.0";
+        internal const System.String AssemblyVersion = "1.1.0.0";
+        internal const System.String AssemblyFileVersion = "1.1.0.0";
+        internal const System.String AssemblyInformationalVersion = "1.1.0.0";
     }
 }
