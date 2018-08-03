@@ -21,7 +21,7 @@ namespace Marten.AnalyzerTool.Services
 
 			var table = doc.CreateElement("table");
 
-			var tableHeader = HtmlNode.CreateNode($@"<thead><tr><th>Projection</th><th>Wired As</th><th>Projection Assembly</th><th>Configuration Assembly</th><th>Source Location</th></thead>");
+			var tableHeader = HtmlNode.CreateNode(@"<thead><tr><th>Projection</th><th>Wired As</th><th>Projection Assembly</th><th>Configuration Assembly</th><th>Source Location</th></thead>");
 			var tableBody = doc.CreateElement("tbody");
 
 			tableBody = allProjections.OrderBy(x => x.Key).Aggregate(tableBody, (node, w) =>

@@ -10,10 +10,9 @@ using Microsoft.CodeAnalysis.MSBuild;
 
 namespace Marten.AnalyzerTool.Services
 {
-	public sealed class ProjectionCataloger
-	{
-	  
-		public async Task BuildCatalog(IEnumerable<string> solutions, IProjectionReporter reporter, Dictionary<string, string> solutionProperties = null)
+	public sealed class IndexCandidateFinder
+	{	  
+		public async Task BuildCatalog(IEnumerable<string> solutions, IIndexCandidateReporter reporter, Dictionary<string, string> solutionProperties = null)
 		{
 			if (solutions == null)
 			{
@@ -32,15 +31,15 @@ namespace Marten.AnalyzerTool.Services
 				return;
 			}
 
-			var collector = new ProjectionWiringAnalyser();
+			var collector = new IndexCandidateAnalyser();
 
 			await Task.WhenAll(solutionsToAnalyze.Select(x => AnalyzeSolution(x, collector, solutionProperties)).ToArray())
 				.ConfigureAwait(false);
       
-			var syncProjections = collector.GetSyncProjections();
-			var asyncProjections = collector.GetAsyncProjections();
-
-			reporter.Report(syncProjections, asyncProjections);
+			var indices = collector.GetIndices();
+			var indexCandidates = collector.GetIndexCandidates();
+			
+			reporter.Report(indices, indexCandidates);
 		}
 
 		private static async Task AnalyzeSolution(string solutionPath, DiagnosticAnalyzer analyzer, Dictionary<string, string> workspaceProperties = null)

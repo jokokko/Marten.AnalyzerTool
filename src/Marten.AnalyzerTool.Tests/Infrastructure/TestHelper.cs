@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Data;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Reflection;
 using System.Threading.Tasks;
 using Marten.AnalyzerTool.Analyzers;
@@ -83,16 +84,16 @@ namespace Marten.AnalyzerTool.Tests.Infrastructure
 		private static readonly IEnumerable<MetadataReference> SystemReferences;
 		static TestHelper()
 		{
-			var referencedAssemblies = typeof(TestHelper).Assembly.GetReferencedAssemblies()
-				.Concat(typeof(ProjectionWiringAnalyser).Assembly.GetReferencedAssemblies())
-				.Concat(typeof(IDocumentStore).Assembly.GetReferencedAssemblies())
-				.Concat(new[] { typeof(IsolationLevel).Assembly.GetName(), typeof(object).Assembly.GetName() });
-
-			var ignore = new[] {"System","System.Core","System.Transactions","System.Drawing"};
-
-			var refs = referencedAssemblies.Where(x => !ignore.Contains(x.Name)).Select(x => (MetadataReference)MetadataReference.CreateFromFile(Assembly.Load(x.Name).Location)).Where(x => x != null);
+			var refs = new[]
+			{
+				MetadataReference.CreateFromFile(typeof(IEnumerable<>).Assembly.Location),
+				MetadataReference.CreateFromFile(typeof(IQueryable).Assembly.Location),
+				MetadataReference.CreateFromFile(typeof(IsolationLevel).Assembly.Location),
+				MetadataReference.CreateFromFile(typeof(IDocumentStore).Assembly.Location),				
+				MetadataReference.CreateFromFile(typeof(IndexCandidateAnalyser).Assembly.Location)
+			};
 
 			SystemReferences = refs;
 		}
 	}
-}
+}	

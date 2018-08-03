@@ -10,6 +10,7 @@ namespace Marten.AnalyzerTool.Model
             return new DiagnosticDescriptor(id, title, messageFormat, category.Name, defaultSeverity, true, description, $"https://jokokko.github.io/marten.analyzers/rules/{id}");
         }
         
-	    internal static readonly DiagnosticDescriptor Marten1008ProjectionAsSyncAndAsync = Rule("Marten1009", "Projection wired as synchronous and asynchronous", RuleCategory.Usage, DiagnosticSeverity.Warning, "Projection '{0}' wired as synchronous and asynchronous.");
+	    internal static readonly DiagnosticDescriptor Marten1008ProjectionAsSyncAndAsync = Rule("Marten1008", "Projection wired as synchronous and asynchronous", RuleCategory.Usage, DiagnosticSeverity.Warning, "Projection '{0}' wired as synchronous and asynchronous.");
+	    internal static readonly DiagnosticDescriptor Marten1009IndexCandidate = Rule("Marten1009", "Index candidate", RuleCategory.Usage, DiagnosticSeverity.Info, "Property '{0}' is a candidate for index.");
 	}
 }
